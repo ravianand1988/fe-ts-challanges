@@ -1,0 +1,24 @@
+{
+  "name": "fe-ts-challanges",
+  "version": "1.0.0",
+  "description": "This repo is for the [Senior/Lead/Staff] Frontend engineers who would like to exercise and practice the some of complex problems in Frontend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravianand1988/fe-ts-challanges.git"
+  },
+  "keywords": [],
+  "author": "Ravi Kumar (ravianand1988@live.com)",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ravianand1988/fe-ts-challanges/issues"
+  },
+  "homepage": "https://github.com/ravianand1988/fe-ts-challanges#readme",
+  "devDependencies": {
+    "@types/bun": "^1.4.3"
+  }
+}
