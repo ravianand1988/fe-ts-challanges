@@ -2,16 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@course/styles": [
+      "@local/styles": [
         "src/utilities/styles.module.css"
       ],
-      "@course/cx": [
+      "@local/cx": [
         "src/utilities/utility.ts"
       ],
-      "@course/types": [
+      "@local/types": [
         "src/utilities/types.ts"
       ],
-      "@course/utils": [
+      "@local/utils": [
         "src/utilities/utils.ts"
       ]
     },

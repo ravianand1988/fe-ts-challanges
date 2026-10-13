@@ -1,3 +1,4 @@
+// npx tsx src/problems/01-detect-type/detect-type.ts
 // bun test src/problems/01-detect-type.test.ts
 
 type MyType =

@@ -83,6 +83,12 @@ The built-in `typeof` operator has limitations:
 3. Access `.constructor.name` and lowercase it
 4. Use nullish coalescing (`??`) to handle objects with null prototype
 
+## Run Code
+
+```bash
+  npx tsx src/problems/01-detect-type/detect-type.ts
+```
+
 ## Run Tests
 
 ```bash
