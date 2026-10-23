@@ -21,6 +21,10 @@
   "homepage": "https://github.com/ravianand1988/fe-ts-challanges#readme",
   "devDependencies": {
     "@types/bun": "^1.4.3",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.1",
+    "globals": "^17.13.0",
     "prettier": "^3.9.10"
   },
   "dependencies": {
