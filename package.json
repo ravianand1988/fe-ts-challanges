@@ -1,9 +1,10 @@
 {
-  "name": "fe-ts-challanges",
+  "name": "fe-ts-challenges",
   "version": "1.0.0",
   "description": "This repo is for the [Senior/Lead/Staff] Frontend engineers who would like to exercise and practice the some of complex problems in Frontend.",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --wirte \"src/**/*.{js,jsx,css,html}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,11 @@
   },
   "homepage": "https://github.com/ravianand1988/fe-ts-challanges#readme",
   "devDependencies": {
-    "@types/bun": "^1.4.3"
+    "@types/bun": "^1.4.3",
+    "prettier": "^3.9.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
