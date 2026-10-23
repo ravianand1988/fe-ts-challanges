@@ -18,6 +18,7 @@ const Counter = () => {
         className="btn-counter"
         type="button"
         name="counter-decrement"
+        data-action="decrement"
         onClick={handleDecrement}
       >
         -
@@ -27,6 +28,7 @@ const Counter = () => {
         className="btn-counter"
         type="button"
         name="counter-increment"
+        data-action="increment"
         onClick={handleIncrement}
       >
         +
