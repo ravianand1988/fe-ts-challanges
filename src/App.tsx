@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
-import { AbstractComponentExample } from "./problems";
 import "./App.css";
+import { Counter } from "./components";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       </div>
       <div className="side-bar" aria-label="side-bar"></div>
       <div className="content" aria-label="content">
-        <AbstractComponentExample />
+        <Counter />
       </div>
     </div>
   );

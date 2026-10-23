@@ -1,14 +1,16 @@
-import { AbstractComponent } from './component'
-import { useRef, useEffect  } from 'react';
+import { AbstractComponent } from "./component";
+import { useRef, useEffect } from "react";
 
-type TCounterConfig = { initial: number }
+type TCounterConfig = { initial: number };
 
 class Counter extends AbstractComponent<TCounterConfig> {
-  count: number
+  count: number;
 
-  constructor(config: ConstructorParameters<typeof AbstractComponent<TCounterConfig>>[0]) {
-    super({ ...config, listeners: ['click'] })
-    this.count = config.initial
+  constructor(
+    config: ConstructorParameters<typeof AbstractComponent<TCounterConfig>>[0],
+  ) {
+    super({ ...config, listeners: ["click"] });
+    this.count = config.initial;
   }
 
   toHTML() {
@@ -18,36 +20,36 @@ class Counter extends AbstractComponent<TCounterConfig> {
         <span style="font-size:1.3rem;min-width:40px;text-align:center;">${this.count}</span>
         <button data-action="increment" style="padding:6px 14px;font-size:1.1rem;cursor:pointer;">+</button>
       </div>
-    `
+    `;
   }
 
   onClick(e: Event) {
-    const action = (e.target as HTMLElement).dataset.action
-    if (action === 'increment') this.count++
-    if (action === 'decrement') this.count--
-    this.render()
+    const action = (e.target as HTMLElement).dataset.action;
+    if (action === "increment") this.count++;
+    if (action === "decrement") this.count--;
+    this.render();
   }
 }
 
 export const AbstractComponentExample = () => {
-  const rootRef = useRef<HTMLDivElement>(null)
-  const counterRef = useRef<Counter | null>(null)
+  const rootRef = useRef<HTMLDivElement>(null);
+  const counterRef = useRef<Counter | null>(null);
 
   useEffect(() => {
-    if (!rootRef.current) return
+    if (!rootRef.current) return;
 
     counterRef.current = new Counter({
       root: rootRef.current,
       initial: 0,
-    })
+    });
 
-    counterRef.current.render()
+    counterRef.current.render();
 
     return () => {
-      counterRef.current?.destroy()
-      counterRef.current = null
-    }
-  }, [])
+      counterRef.current?.destroy();
+      counterRef.current = null;
+    };
+  }, []);
 
-  return <div ref={rootRef}></div>
-}
+  return <div ref={rootRef}></div>;
+};

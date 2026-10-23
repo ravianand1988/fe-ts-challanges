@@ -7,7 +7,7 @@
     "build": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "format": "prettier --wirte \"src/**/*.{js,jsx,css,html}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,html}\"",
     "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
