@@ -25,7 +25,8 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "types": [
-      "bun-types"
+      "bun-types",
+      "vite/client"
     ],
     /* JSX */
     "jsx": "react-jsx",

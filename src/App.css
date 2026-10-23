@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: grid;
+  grid-template-areas:
+    "top-nav top-nav"
+    "side-bar content";
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.top-nav {
+  grid-area: top-nav;
+  padding: 0 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.side-bar {
+  grid-area: side-bar;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.content {
+  grid-area: content;
+  padding: 16px;
+  overflow-y: auto;
+}
