@@ -10,5 +10,10 @@ export const challengesRoutes = [
     path: 'accordions',
     label: 'Accordions',
     Component: lazy(() =>  import('./components').then((m) => ({ default: m.AccordionExample })))
+  },
+  {
+    path: 'star-rating',
+    label: 'Star Rating',
+    Component: lazy(() =>  import('./components').then((m) => ({ default: m.StarRatingExample })))
   }
 ]
