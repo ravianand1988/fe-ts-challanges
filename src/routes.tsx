@@ -20,5 +20,10 @@ export const challengesRoutes = [
     path: 'tabs',
     label: 'Tabs',
     Component: lazy(() =>  import('./components').then((m) => ({ default: m.TabsExample })))
+  },
+  {
+    path: 'dialog',
+    label: 'Dialog',
+    Component: lazy(() =>  import('./components').then((m) => ({ default: m.DialogExample })))
   }
 ]
