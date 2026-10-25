@@ -15,5 +15,10 @@ export const challengesRoutes = [
     path: 'star-rating',
     label: 'Star Rating',
     Component: lazy(() =>  import('./components').then((m) => ({ default: m.StarRatingExample })))
+  },
+  {
+    path: 'tabs',
+    label: 'Tabs',
+    Component: lazy(() =>  import('./components').then((m) => ({ default: m.TabsExample })))
   }
 ]

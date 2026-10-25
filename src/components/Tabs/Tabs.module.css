@@ -1,0 +1,29 @@
+.tabContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+
+.tabItem {
+  padding: 0.5rem 1rem;
+  border-bottom:  solid 1px #000;
+}
+
+.tabActive {
+  border-bottom: solid 3px green;
+}
+
+.tabContent {
+  width: 500px;
+  height: 400px;
+  background-color: #e2e2e2;
+  border: solid 1px gray;
+}
+
+.tabVisible {
+  display: block;
+}
+
+.tabHidden {
+  display: none;
+}
