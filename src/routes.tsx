@@ -25,5 +25,10 @@ export const challengesRoutes = [
     path: 'dialog',
     label: 'Dialog',
     Component: lazy(() =>  import('./components').then((m) => ({ default: m.DialogExample })))
+  },
+  {
+    path: 'data-table',
+    label: 'Data Table',
+    Component: lazy(() =>  import('./components').then((m) => ({ default: m.DataTableExample })))
   }
 ]

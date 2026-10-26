@@ -1,0 +1,120 @@
+.tableWrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 0 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.headerCell {
+  position: sticky;
+  top: 0;
+  padding: 10px 12px;
+  border-bottom: 2px solid #ddd;
+  background-color: #fafafa;
+  color: #555;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.headerCell:hover {
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+/* Sort indicator: faint ↕ on idle columns, solid arrow on the active one */
+.headerCell::after {
+  content: "↕";
+  display: inline-block;
+  width: 1em;
+  margin-left: 6px;
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.3;
+  transition: opacity 0.15s ease;
+}
+
+.headerCell:hover::after {
+  opacity: 0.6;
+}
+
+.headerCell[aria-sort="ascending"],
+.headerCell[aria-sort="descending"] {
+  background-color: #eef3fd;
+  color: #1f4fbf;
+  border-bottom-color: #3b6fd8;
+}
+
+.headerCell[aria-sort="ascending"]::after {
+  content: "▲";
+  opacity: 1;
+}
+
+.headerCell[aria-sort="descending"]::after {
+  content: "▼";
+  opacity: 1;
+}
+
+.row {
+  transition: background-color 0.15s ease;
+}
+
+.row:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+.row:hover {
+  background-color: #e8effd;
+}
+
+.cell {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+.row:last-child .cell {
+  border-bottom: none;
+}
+
+/* Right-align numbers so digits line up across rows */
+.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 2.5rem;
+}
+
+.searchInput {
+  margin: 0.5rem 2rem;
+  width: 500px;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  border: solid 1px gray;
+}
