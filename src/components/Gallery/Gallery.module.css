@@ -1,0 +1,60 @@
+.imgWrapper {
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+.listImages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.listImage {
+  flex-shrink: 0;
+}
+
+.listImage img {
+  object-fit: cover;
+}
+
+.button {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.button:not(:disabled):hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.indicators {
+  bottom: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.dotActive {
+  background: white;
+  transform: scale(1.2);
+}
+
+
