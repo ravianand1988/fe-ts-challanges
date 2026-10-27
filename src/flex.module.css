@@ -1,0 +1,2 @@
+/* Moved: This file now delegates to src/utilities/flex.module.css to keep existing imports working. */
+@import './utilities/flex.module.css';

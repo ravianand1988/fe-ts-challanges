@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  display: grid;
+  grid-template-areas:
+    "top-nav top-nav"
+    "side-bar content";
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.top-nav {
+  grid-area: top-nav;
+  padding: 0 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.side-bar {
+  grid-area: side-bar;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  padding: 16px 12px;
+  border-right: 1px solid #ddd;
+  background-color: #fafafa;
+  overflow-y: auto;
+}
+
+.side-bar a {
+  display: block;
+  padding: 8px 12px;
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  color: #333;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.side-bar a:hover {
+  background-color: #eee;
+  color: #111;
+}
+
+.side-bar a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* NavLink adds .active to the link matching the current URL */
+.side-bar a.active {
+  border-left-color: #2563eb;
+  background-color: #e8effd;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+.content {
+  grid-area: content;
+  padding: 16px;
+  overflow-y: auto;
+}

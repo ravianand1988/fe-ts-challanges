@@ -1,0 +1,20 @@
+.container-counter {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  padding: 0;
+  place-items: center;
+}
+
+.btn-counter {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.label-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
