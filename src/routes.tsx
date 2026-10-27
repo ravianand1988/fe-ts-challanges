@@ -2,33 +2,54 @@ import { lazy } from "react";
 
 export const challengesRoutes = [
   {
-    path: 'counter',
-    label: 'Counter',
-    Component: lazy(() =>  import('./components').then((m) => ({ default: m.Counter })))
+    path: "counter",
+    label: "Counter",
+    Component: lazy(() =>
+      import("./components").then((m) => ({ default: m.Counter })),
+    ),
   },
   {
-    path: 'accordions',
-    label: 'Accordions',
-    Component: lazy(() =>  import('./components').then((m) => ({ default: m.AccordionExample })))
+    path: "accordions",
+    label: "Accordions",
+    Component: lazy(() =>
+      import("./components").then((m) => ({ default: m.AccordionExample })),
+    ),
   },
   {
-    path: 'star-rating',
-    label: 'Star Rating',
-    Component: lazy(() =>  import('./components').then((m) => ({ default: m.StarRatingExample })))
+    path: "star-rating",
+    label: "Star Rating",
+    Component: lazy(() =>
+      import("./components").then((m) => ({ default: m.StarRatingExample })),
+    ),
   },
   {
-    path: 'tabs',
-    label: 'Tabs',
-    Component: lazy(() =>  import('./components').then((m) => ({ default: m.TabsExample })))
+    path: "tabs",
+    label: "Tabs",
+    Component: lazy(() =>
+      import("./components").then((m) => ({ default: m.TabsExample })),
+    ),
   },
   {
-    path: 'dialog',
-    label: 'Dialog',
-    Component: lazy(() =>  import('./components').then((m) => ({ default: m.DialogExample })))
+    path: "dialog",
+    label: "Dialog",
+    Component: lazy(() =>
+      import("./components").then((m) => ({ default: m.DialogExample })),
+    ),
   },
   {
-    path: 'data-table',
-    label: 'Data Table',
-    Component: lazy(() =>  import('./components').then((m) => ({ default: m.DataTableExample })))
-  }
-]
+    path: "data-table",
+    label: "Data Table",
+    Component: lazy(() =>
+      import("./components").then((m) => ({ default: m.DataTableExample })),
+    ),
+  },
+  {
+    path: "data-table-master-dev",
+    label: "Data Table Master.Dev",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.DataTableMasterExample,
+      })),
+    ),
+  },
+];

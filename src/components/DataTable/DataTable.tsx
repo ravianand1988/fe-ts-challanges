@@ -4,7 +4,7 @@ import styles from "./DataTable.module.css";
 interface TTableDataSource<T> {
   pageSize: number;
   pages: number;
-  next: (page: number, pageSize: number) => Promise<T>;
+  next: (page: number, pageSize: number) => Promise<T[]>;
 }
 
 interface TTableColumn<T> {
