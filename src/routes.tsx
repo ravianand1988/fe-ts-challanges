@@ -52,4 +52,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "gallery",
+    label: "Gallery",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.GalleryExample,
+      })),
+    ),
+  },
 ];
