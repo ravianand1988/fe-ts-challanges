@@ -7,3 +7,4 @@ export * from "./Gallery/Gallery.example";
 export * from "./Reddit-Thread/RedditThread.example";
 export * from "./StarRating/StarRating.example";
 export * from "./Tabs/Tabs.example";
+export * from "./Toast/Toast.example";

@@ -70,4 +70,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "toast",
+    label: "Toast",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.ToastExample,
+      })),
+    ),
+  },
 ];
