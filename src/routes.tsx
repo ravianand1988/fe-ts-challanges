@@ -61,4 +61,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "reddit-thread",
+    label: "Reddit Thread",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.RedditThreadExample,
+      })),
+    ),
+  },
 ];
