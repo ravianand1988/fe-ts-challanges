@@ -8,13 +8,13 @@ const IMAGES = [
 ];
 
 const GALLERY_ITEMS: TGallery[] = [
-  { id: 1, src: "./public/gallery/image-1.avif" },
-  { id: 2, src: "./public/gallery/image-2.avif" },
-  { id: 3, src: "./public/gallery/image-3.avif" },
-  { id: 4, src: "./public/gallery/image-4.avif" },
-  { id: 5, src: "./public/gallery/image-5.webp" },
-  { id: 6, src: "./public/gallery/image-6.jpeg" },
-  { id: 7, src: "./public/gallery/image-7.webp" },
+  { id: 1, src: "gallery/image-1.avif" },
+  { id: 2, src: "gallery/image-2.avif" },
+  { id: 3, src: "gallery/image-3.avif" },
+  { id: 4, src: "gallery/image-4.avif" },
+  { id: 5, src: "gallery/image-5.webp" },
+  { id: 6, src: "gallery/image-6.jpeg" },
+  { id: 7, src: "gallery/image-7.webp" },
   ...IMAGES.map((src, index) => ({ id: index + 8, src: src })),
 ];
 

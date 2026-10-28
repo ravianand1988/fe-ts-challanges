@@ -4,5 +4,6 @@ export * from "./DataTable/DataTable.example";
 export * from "./DataTable/DataTable.master.example";
 export * from "./Dialog/Dialog.example";
 export * from "./Gallery/Gallery.example";
+export * from "./Reddit-Thread/RedditThread.example";
 export * from "./StarRating/StarRating.example";
 export * from "./Tabs/Tabs.example";
