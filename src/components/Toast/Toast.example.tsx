@@ -82,7 +82,11 @@ export const ToastExample = () => {
 
   return (
     <>
-      <button type="button" onClick={() => addToast()}>
+      <button
+        className={cssUtils.marginRight16}
+        type="button"
+        onClick={() => addToast()}
+      >
         Show toast
       </button>
       <ul

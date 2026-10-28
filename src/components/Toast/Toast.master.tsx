@@ -83,22 +83,16 @@ function ToastList({ refX }: { refX: React.Ref<TToastMethods> }) {
   const onAnimationEndMaster: React.AnimationEventHandler<HTMLElement> = ({
     target,
   }) => {
-    console.log("on animation end: ", target);
     if (!(target instanceof HTMLElement)) {
       return;
     }
     if (target.dataset.id == null) {
       return;
     }
-    console.log("on animation ", target.dataset);
-    console.log("removed ", target.dataset.removed === "true");
     if (target.dataset.removed === "true") {
       setItems((items) => items.filter((it) => it.id !== target.dataset.id));
     } else if (target.dataset.removed === "false") {
-      console.log("removed false");
-
       setTimeout(() => {
-        console.log("setting time out");
         setItems((items) =>
           items.map((it) => ({
             ...it,
@@ -124,7 +118,7 @@ function ToastList({ refX }: { refX: React.Ref<TToastMethods> }) {
           key={item.id}
           data-removed={item.removed}
           data-id={item.id}
-          className={`${item.removed ? css.fadeout : css.fadeIn}`}
+          className={`${item.removed ? css.fadeOut : css.fadeIn}`}
         >
           <div className={cx(css.toast, cssUtils.flexColumnCenter)}>
             <p>{item.text}</p>
