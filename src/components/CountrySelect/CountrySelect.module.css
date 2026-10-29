@@ -39,3 +39,7 @@
   background-color: lightblue;
   cursor: pointer;
 }
+
+.countryItemActive {
+  background-color: lightblue;
+}
