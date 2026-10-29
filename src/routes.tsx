@@ -79,4 +79,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "country-select",
+    label: "Country Select",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.CountrySelectExample,
+      })),
+    ),
+  },
 ];

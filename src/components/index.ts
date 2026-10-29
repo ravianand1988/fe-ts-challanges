@@ -1,5 +1,6 @@
 export * from "./Accordion/Accordion.example";
 export * from "./Counter/Counter";
+export * from "./CountrySelect/CountrySelect.example";
 export * from "./DataTable/DataTable.example";
 export * from "./DataTable/DataTable.master.example";
 export * from "./Dialog/Dialog.example";
