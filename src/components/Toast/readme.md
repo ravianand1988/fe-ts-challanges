@@ -9,7 +9,7 @@
 - React animations (fade-in / fade-out) with `onAnimationEnd`
 - Timer-based auto dismiss
 
-## Goal
+## Goalgit
 
 Build a toast notification system. A `ToastProvider` wraps the app and exposes a `useToast()` hook. Calling `toast({ id, text })` renders a notification that auto-dismisses after a timer, with enter/exit animations.
 

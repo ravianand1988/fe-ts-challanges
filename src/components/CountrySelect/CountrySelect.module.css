@@ -1,0 +1,41 @@
+.countrySelectLabel {
+  display: block;
+}
+
+.inputCountrySelect {
+  min-width: 350px;
+  padding: 0 0.5rem;
+  height: 40px;
+  border-radius: 0.5rem;
+}
+
+.countrySelectContainer {
+  border: solid 2px lightgray;
+  min-width: 350px;
+  width: auto;
+  left: 0;
+  transform: translateY(0);
+  border-radius: 0.5rem;
+  border-top: none;
+  max-height: 400px;
+  overflow-y: scroll;
+  display: none;
+}
+
+.countrySelectInputWrapper:focus-within .countrySuggestions {
+  display: block;
+}
+
+.countrySelectList {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.countryItem {
+  padding: 0.5rem 1rem;
+}
+
+.countryItem:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
