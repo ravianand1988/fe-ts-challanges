@@ -88,4 +88,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "autocomplete",
+    label: "Autocomplete",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.AutocompleteExample,
+      })),
+    ),
+  },
 ];

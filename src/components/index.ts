@@ -1,4 +1,5 @@
 export * from "./Accordion/Accordion.example";
+export * from "./Autocomplete/Autocomplete.example";
 export * from "./Counter/Counter";
 export * from "./CountrySelect/CountrySelect.example";
 export * from "./DataTable/DataTable.example";
