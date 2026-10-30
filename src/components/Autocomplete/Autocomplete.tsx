@@ -1,26 +1,21 @@
 import { useEffect, useId, useRef, useState } from "react";
+import type { TAutocompleteItem } from "src/api";
 import { cx } from "src/utilities";
 import cssUtils from "../../utilities/styles.module.css";
 import css from "./Autocomplete.module.css";
-
-export type TAutocompleteItem<T> = {
-  key: string;
-  value: T;
-  renderer?: (item: TAutocompleteItem<T>) => string;
-};
-
-export interface IAutocomplete<T> {
-  options: TAutocompleteItem<T>[];
-  onSelect: (item: TAutocompleteItem<T>) => void;
-  onQueryChange: (query: string) => void;
-}
+import type { IAutocomplete } from "./Autocomplete.types";
 
 export const Autocomplete = <T,>({
+  label,
+  placeholder,
   options,
   onSelect,
   onQueryChange,
+  getOptionLabel,
+  loading,
+  error,
 }: IAutocomplete<T>) => {
-  // const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
   const listRef = useRef<HTMLUListElement>(null);
@@ -30,21 +25,14 @@ export const Autocomplete = <T,>({
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    setQuery(value);
     setInputValue(value);
-    // setQuery(value);
     setActiveIndex(-1);
     onQueryChange(value);
   };
 
   const handleOnSelect = (option: TAutocompleteItem<T>) => {
-    const { value } = option;
-    if (typeof value === "string") {
-      setInputValue(option.value as string);
-    } else {
-      const val = option.renderer && option.renderer(option);
-      setInputValue(val!);
-    }
-    // setQuery("");
+    setInputValue(getOptionLabel(option.value));
     setActiveIndex(-1);
     onSelect(option);
   };
@@ -90,14 +78,14 @@ export const Autocomplete = <T,>({
     <div
       className={cx(css.autocompleteWrapper, cssUtils.margin24, cssUtils.pRel)}
     >
-      <label className={cx(css.inputLabel)} htmlFor="">
-        Autocomplete
+      <label className={cx(css.inputLabel)} htmlFor={inputId}>
+        {label || "Autocomplete"}
       </label>
       <input
         className={cx(css.inputAutocomplete)}
         type="text"
         role="combobox"
-        placeholder="Type to search..."
+        placeholder={placeholder || "Type to search..."}
         id={inputId}
         aria-controls={listId}
         aria-activedescendant={
@@ -113,32 +101,66 @@ export const Autocomplete = <T,>({
         role="listbox"
         className={cx(css.suggestions, cssUtils.pAbs)}
       >
-        {options.map((option, index) => (
+        {error ? (
           <li
-            id={`${uId}-option-${index}`}
-            role="option"
-            aria-selected={index === activeIndex}
             tabIndex={-1}
             className={cx(
               cssUtils.paddingHor16,
               cssUtils.paddingVer8,
               css.suggestionsItem,
-              index === activeIndex ? css.suggestionsItemActive : "",
             )}
-            key={option.key}
-            onMouseEnter={() => setActiveIndex(index)}
-            onClick={(e) => {
-              handleOnSelect(option);
-              e.currentTarget.blur();
-            }}
+            key={error}
           >
-            {typeof option.value === "string"
-              ? option.value
-              : option.renderer
-                ? option.renderer(option)
-                : JSON.stringify(option.value)}
+            {error}
           </li>
-        ))}
+        ) : loading ? (
+          <li
+            tabIndex={-1}
+            className={cx(
+              cssUtils.paddingHor16,
+              cssUtils.paddingVer8,
+              css.suggestionsItem,
+            )}
+            key={"loading"}
+          >
+            Loading...
+          </li>
+        ) : query.trim() && options.length === 0 ? (
+          <li
+            tabIndex={-1}
+            className={cx(
+              cssUtils.paddingHor16,
+              cssUtils.paddingVer8,
+              css.suggestionsItem,
+            )}
+            key={"noResult"}
+          >
+            No matching result!
+          </li>
+        ) : (
+          options.map((option, index) => (
+            <li
+              id={`${uId}-option-${index}`}
+              role="option"
+              aria-selected={index === activeIndex}
+              tabIndex={-1}
+              className={cx(
+                cssUtils.paddingHor16,
+                cssUtils.paddingVer8,
+                css.suggestionsItem,
+                index === activeIndex ? css.suggestionsItemActive : "",
+              )}
+              key={option.key}
+              onMouseEnter={() => setActiveIndex(index)}
+              onClick={(e) => {
+                handleOnSelect(option);
+                e.currentTarget.blur();
+              }}
+            >
+              {getOptionLabel(option.value)}
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );
