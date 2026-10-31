@@ -5,6 +5,7 @@ export * from "./CountrySelect/CountrySelect.example";
 export * from "./DataTable/DataTable.example";
 export * from "./DataTable/DataTable.master.example";
 export * from "./Dialog/Dialog.example";
+export * from "./FeatureFlag/FeatureFlag.example";
 export * from "./Gallery/Gallery.example";
 export * from "./Reddit-Thread/RedditThread.example";
 export * from "./SmartPhoneInput/SmartPhoneInput.example";

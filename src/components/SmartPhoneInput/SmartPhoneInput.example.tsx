@@ -1,12 +1,13 @@
+import { useState } from "react";
 import { SmartPhoneInput } from "./SmartPhoneInput";
 
 export const SmartPhoneInputExample = () => {
-  function handleOnChange(val: string) {
-    console.log("value: ", val);
-  }
+  const [phone, setPhone] = useState("");
+
   return (
     <div>
-      <SmartPhoneInput value="" onChange={handleOnChange} />
+      <SmartPhoneInput value={phone} onChange={setPhone} />
+      <p>Stored value: {phone || "(empty)"}</p>
     </div>
   );
 };

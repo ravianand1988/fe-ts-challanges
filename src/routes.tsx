@@ -106,4 +106,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "feature-flag-test",
+    label: "Feature Flag Test",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.FeatureFlagExample,
+      })),
+    ),
+  },
 ];
