@@ -97,4 +97,40 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "smart-phone-input",
+    label: "Smart Phone Input",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.SmartPhoneInputExample,
+      })),
+    ),
+  },
+  {
+    path: "feature-flag-test",
+    label: "Feature Flag Test",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.FeatureFlagExample,
+      })),
+    ),
+  },
+  {
+    path: "hotel-guests",
+    label: "Hotel Guests",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.HotelGuestsExample,
+      })),
+    ),
+  },
+  {
+    path: "recursive-file-tree",
+    label: "Recursive File Tree",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.RecursiveFileTreeExample,
+      })),
+    ),
+  },
 ];

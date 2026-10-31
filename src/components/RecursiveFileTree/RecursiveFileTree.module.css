@@ -1,0 +1,11 @@
+.fileTree {
+  cursor: pointer;
+}
+
+.fileTree:hover {
+  background-color: lightblue;
+}
+
+.fileTree:active {
+  background-color: salmon;
+}
