@@ -115,4 +115,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "hotel-guests",
+    label: "Hotel Guests",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.HotelGuestsExample,
+      })),
+    ),
+  },
 ];

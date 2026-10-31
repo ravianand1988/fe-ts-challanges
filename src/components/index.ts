@@ -7,6 +7,7 @@ export * from "./DataTable/DataTable.master.example";
 export * from "./Dialog/Dialog.example";
 export * from "./FeatureFlag/FeatureFlag.example";
 export * from "./Gallery/Gallery.example";
+export * from "./HotelGuests/HotelGuests.example";
 export * from "./Reddit-Thread/RedditThread.example";
 export * from "./SmartPhoneInput/SmartPhoneInput.example";
 export * from "./StarRating/StarRating.example";
