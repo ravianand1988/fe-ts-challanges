@@ -97,4 +97,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "smart-phone-input",
+    label: "Smart Phone Input",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.SmartPhoneInputExample,
+      })),
+    ),
+  },
 ];
