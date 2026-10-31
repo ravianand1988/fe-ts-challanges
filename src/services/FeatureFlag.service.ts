@@ -74,6 +74,11 @@ class FeatureFlagService {
   public clearCache() {
     this._cache.clear();
   }
+
+  public invalidate(key: string) {
+    this._cache.delete(key);
+    this._pending.delete(key);
+  }
 }
 
 const featureFlagService = new FeatureFlagService();
