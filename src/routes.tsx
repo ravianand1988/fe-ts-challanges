@@ -124,4 +124,13 @@ export const challengesRoutes = [
       })),
     ),
   },
+  {
+    path: "recursive-file-tree",
+    label: "Recursive File Tree",
+    Component: lazy(() =>
+      import("./components").then((m) => ({
+        default: m.RecursiveFileTreeExample,
+      })),
+    ),
+  },
 ];
