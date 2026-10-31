@@ -1,5 +1,6 @@
 import { useId, useState } from "react";
 import { Counter } from "../Counter/Counter";
+import styles from "./HotelGuests.module.css";
 
 interface Room {
   id: number;
@@ -67,49 +68,79 @@ export const HotelGuests = () => {
   );
 
   return (
-    <div>
-      <h2>Hotel Guests</h2>
-      {rooms.map((room, index) => {
-        return (
-          <section key={room.id}>
-            <h3>Room {index + 1}</h3>
-            <label>
-              Adults
-              <Counter
-                key={room.id}
-                min={1}
-                max={6}
-                value={room.adults}
-                onChange={(value) => {
-                  updateAdults(room.id, value);
-                }}
-              />
-            </label>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Hotel Guests</h2>
+      <div className={styles.rooms}>
+        {rooms.map((room, index) => {
+          return (
+            <section key={room.id} className={styles.room}>
+              <header className={styles.roomHeader}>
+                <h3 className={styles.roomTitle}>Room {index + 1}</h3>
+                <button
+                  type="button"
+                  className={styles.buttonDanger}
+                  disabled={rooms.length === 1}
+                  onClick={() => removeRoom(room.id)}
+                >
+                  Remove room
+                </button>
+              </header>
 
-            <button onClick={() => addChild(room.id)}>Add child</button>
-
-            {room.children.map((age, childIndex) => (
-              <label key={`${uniqueId}${childIndex}`} htmlFor="">
-                Child {childIndex + 1} age
+              <div className={styles.field}>
+                <span className={styles.fieldLabel}>Adults</span>
                 <Counter
-                  key={`${uniqueId}${childIndex}`}
-                  min={0}
-                  max={17}
-                  value={age}
+                  key={room.id}
+                  min={1}
+                  max={6}
+                  value={room.adults}
                   onChange={(value) => {
-                    updateChildAge(room.id, childIndex, value);
+                    updateAdults(room.id, value);
                   }}
                 />
-              </label>
-            ))}
+              </div>
 
-            <button onClick={() => removeRoom(room.id)}>Remove room</button>
-          </section>
-        );
-      })}
-      <button onClick={addRoom}>Add room</button>
+              {room.children.length > 0 && (
+                <div className={styles.children}>
+                  {room.children.map((age, childIndex) => (
+                    <div
+                      key={`${uniqueId}${childIndex}`}
+                      className={styles.field}
+                    >
+                      <span className={styles.fieldLabel}>
+                        Child {childIndex + 1} age
+                      </span>
+                      <Counter
+                        key={`${uniqueId}${childIndex}`}
+                        min={0}
+                        max={17}
+                        value={age}
+                        onChange={(value) => {
+                          updateChildAge(room.id, childIndex, value);
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
 
-      <p>Total guests: {totalGuests}</p>
+              <button
+                type="button"
+                className={`${styles.button} ${styles.buttonSecondary}`}
+                onClick={() => addChild(room.id)}
+              >
+                + Add child
+              </button>
+            </section>
+          );
+        })}
+      </div>
+
+      <footer className={styles.footer}>
+        <p className={styles.total}>Total guests: {totalGuests}</p>
+        <button type="button" className={styles.button} onClick={addRoom}>
+          + Add room
+        </button>
+      </footer>
     </div>
   );
 };
