@@ -1,0 +1,41 @@
+.inputLabel {
+  display: block;
+}
+
+.inputAutocomplete {
+  min-width: 350px;
+  padding: 0 0.5rem;
+  height: 40px;
+  border-radius: 0.5rem;
+}
+
+.suggestions {
+  border: solid 2px lightgray;
+  min-width: 350px;
+  max-width: fit-content;
+  width: auto;
+  left: 0;
+  transform: translateY(-15px);
+  border-radius: 0.5rem;
+  border-top: none;
+  max-height: 400px;
+  overflow-y: scroll;
+  display: none;
+  list-style: none;
+  padding-inline-start: 0;
+  z-index: 9999;
+  background-color: white;
+}
+
+.autocompleteWrapper:focus-within .suggestions {
+  display: block;
+}
+
+.suggestionsItem:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.suggestionsItemActive {
+  background-color: lightgray;
+}
